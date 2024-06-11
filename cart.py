@@ -12,13 +12,13 @@ L = 1.0  # Length to pendulum center of mass (m)
 g = 9.81  # Gravity constant (m/s^2)
 
 # State-space matrices for the linearized inverted pendulum model
-A = np.array([[0, 1, 0, 0],
-              [0, -2*(m+M)*g/(L*(m+2*M)), 0, 0],
-              [0, 0, 0, 1],
-              [0, 2*g*(M+m)/(L*(m+2*M)), 0, 0]])
-B = np.array([[0], [2/(L*(m+2*M))], [0], [-2*(M+m)/(L*(m+2*M))]])
-C = np.array([[1, 0, 0, 0]])
-D = np.array([[0]])
+A = np.array([[],
+              [],
+              [],
+              []])
+B = np.array([[], [], [], [])
+C = np.array([[]])
+D = np.array([[]])
 
 # Create the state-space system for the inverted pendulum model
 pendulum_system = ctl.StateSpace(A, B, C, D)
